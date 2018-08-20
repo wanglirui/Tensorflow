@@ -17,9 +17,9 @@ tensorflow object  detection
 
 2.	CSV文件转换为TFRecord文件
 该项目需要把将图片和标注转换为TFRecord格式，这需要编写一个python的脚本文件wanglirui/ TRF_data_get/ csv_to_TFrecord.py。同时也需要一个类别ID与类别名称的关系文件，这个关系通常用pbtxt格式文件保存，例如新建一个person_map.pbtxt的文本文件，内容如下：
-![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/4.jpg)
-最后执行格式转换的脚本来获分别得TFRecord格式训练集和验证集的数据。
 ![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/5.jpg)
+最后执行格式转换的脚本来获分别得TFRecord格式训练集和验证集的数据。
+![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/6.jpg)
 
 四、	选择预训练模型
    选择我们需要的预训练模型，比如之前用的rfcn_resnet101_coco, faster_rcnn_nas_coco, ssd_mobilenet_v1_coco等。然后使用我们自己标注的数据在这个模型上进行fine-tuning。将模型上传到服务器。
@@ -34,9 +34,9 @@ tensorflow object  detection
 
 六、	重新训练模型
 启动配置好的虚拟环境
-![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/6.jpg)
-配置一下环境变量
 ![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/7.jpg)
+配置一下环境变量
+![Image text](https://github.com/wanglirui/Tensorflow/blob/master/image/8.jpg)
 开始训练，执行object_detection/legacy/train.py这个文件，需要告诉训练集的路径和对应的配置文件的路径。
 python./legacy/train.py --logtostderr --pipeline_config_path=./mymodel_ssd/ssd_mobilenet_v1_coco.config  --train_dir=./training_result/ssd_mobiel_model
 在训练过程中使用验证集来评估模型的性能，执行object_detection/eval.py这个文件。执行训练完成后，保存模型。导出训练好的模型，执行object_detection/export_inference_graph.py：
