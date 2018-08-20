@@ -6,7 +6,7 @@ tensorflow object  detection
 
 二、	数据标注
 采用labelImg软件来标记自己的数据集，选择存放图片的文件夹，选择图像，然后手动框出图像上的物体，并加类别标签（对于类别标签我们应该根据画作首先确定我们需要检测出来的类别数量，本次实验标记了男人和女人两个类别），然后保存就能够生成XML格式的标注文件，点击NEXT IMAGE 进行下一张图像的标注。如下图所示：在这幅图中手动标注出来了女人，并生成了对应的XML标注文件。
-
+![Image text](https://raw.githubusercontent.com/hongmaju/light7Local/master/img/productShow/20170518152848.png)
  
  
 三、	格式转换
