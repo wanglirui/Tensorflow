@@ -1,6 +1,7 @@
 # Tensorflow
 tensorflow object  detection
-目标检测fine-tuning报告（男女检测）
+目标检测fine-tuning（男女检测）
+
 一、	数据集
 在数据库中下载了2000张标签为肖像画的画作，选择1000张作为训练集和验证集，1000张作为测试集。
 
