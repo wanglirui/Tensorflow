@@ -42,6 +42,7 @@ python./legacy/train.py --logtostderr --pipeline_config_path=./mymodel_ssd/ssd_m
 在训练过程中使用验证集来评估模型的性能，执行object_detection/eval.py这个文件。执行训练完成后，保存模型。导出训练好的模型，执行object_detection/export_inference_graph.py：
 python export_inference_graph.py --pipeline_config_path=./mymodel_ssd/ssd_mobilenet_v1_coco.config --trained_checkpoint_prefix=./training_result/ssd_mobiel_model/model.ckpt-2000 --output_directory=./training_result//ssd_mobiel_model
 然后就可以用训练得到的模型来对新的图片进行目标检测了。
+
 七、	目标检测
  将到出的模型中frozen_inference_graph.pb文件单独保存到mymodel_ssd中，打开jupyter notebook，执行object_detection/
 object_detection_tutorial.ipynb 。最后的检测结果会保存到预习设定的文件夹result里面。
